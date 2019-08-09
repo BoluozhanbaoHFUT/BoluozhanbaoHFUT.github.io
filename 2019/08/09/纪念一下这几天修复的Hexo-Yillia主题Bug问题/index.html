@@ -16,14 +16,14 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="额，写篇文章记录一下这几天干的事情，是的，呆在电脑前修Bug，事实上一个好的框架还是需要一个好的主题的，如果像我一样选了Yillia主题，没错，很烦人，不过我很专一的[滑稽]，不抛弃、不离弃、不放弃，于是开始了苦逼的修Bug时间">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/photos/TIM%E6%88%AA%E5%9B%BE20190809110730.png">
-<meta property="og:image" content="http://yoursite.com/photos/TIM%E6%88%AA%E5%9B%BE20190809111403.png">
-<meta property="og:image" content="http://yoursite.com/photos/TIM%E6%88%AA%E5%9B%BE20190809111440.png">
-<meta property="og:updated_time" content="2019-08-09T03:15:08.906Z">
+<meta property="og:image" content="http://yoursite.com/photos/004.png">
+<meta property="og:image" content="http://yoursite.com/photos/005.png">
+<meta property="og:image" content="http://yoursite.com/photos/006.png">
+<meta property="og:updated_time" content="2019-08-09T03:26:46.332Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="纪念一下这几天修复的Hexo Yillia主题Bug问题">
 <meta name="twitter:description" content="额，写篇文章记录一下这几天干的事情，是的，呆在电脑前修Bug，事实上一个好的框架还是需要一个好的主题的，如果像我一样选了Yillia主题，没错，很烦人，不过我很专一的[滑稽]，不抛弃、不离弃、不放弃，于是开始了苦逼的修Bug时间">
-<meta name="twitter:image" content="http://yoursite.com/photos/TIM%E6%88%AA%E5%9B%BE20190809110730.png">
+<meta name="twitter:image" content="http://yoursite.com/photos/004.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -230,12 +230,12 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-08-09 09:54:16</span><br><span class="line"><span class="built_in">type</span>: tags</span><br><span class="line">comments: <span class="literal">false</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
 <p>没办法，几番百度，没解决，直到刚才，偶然间浏览了一篇大佬的博客，试了一下，成功了，顺便修改了一波代码，使得显示的更好看一点，代码补入区域为，Blog\themes\yilia\layout_partial\article.ejs</p>
-<p><img src="../../../../../photos/TIM%E6%88%AA%E5%9B%BE20190809110730.png" alt="Img"></p>
+<p><img src="../../../../../photos/004.png" alt="Img"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (page.type === <span class="string">"tags"</span>) &#123; %&gt;</span><br><span class="line">  &lt;div class=<span class="string">"tag-cloud"</span>&gt;</span><br><span class="line">	&lt;div class=<span class="string">"tag-cloud-title"</span>&gt;</span><br><span class="line">	&lt;%- <span class="string">"TOTAL("</span> + site.tags.length + <span class="string">")"</span> %&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">	&lt;div class=<span class="string">"tag-cloud-tags"</span>&gt;</span><br><span class="line">	&lt;%- tagcloud(&#123;</span><br><span class="line">	  min_font: 12,</span><br><span class="line">	  max_font: 30,</span><br><span class="line">	  amount: 200,</span><br><span class="line">	  color: <span class="literal">true</span>,</span><br><span class="line">	  start_color: <span class="string">'#555'</span>,</span><br><span class="line">	  end_color: <span class="string">'#111'</span></span><br><span class="line">	  &#125;) %&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;% &#125; <span class="keyword">else</span> <span class="keyword">if</span> (page.type === <span class="string">'categories'</span>) &#123; %&gt;</span><br><span class="line"></span><br><span class="line">  &lt;div class=<span class="string">"category-all-page"</span>&gt;</span><br><span class="line">	&lt;div class=<span class="string">"category-all-title"</span>&gt;</span><br><span class="line">	&lt;%- <span class="string">"TOTAL("</span> + site.categories.length + <span class="string">")"</span>%&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">	&lt;div class=<span class="string">"category-all"</span>&gt;</span><br><span class="line">	&lt;%- list_categories() %&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
 
 <p>很受不了，以后选主题前必须要作一番功课了，据说Next主题不错，有时间可以试试，不过我是不想再换了，有时间试一试Markdown Pad，好用的话再说，不好用的话……，对了，修复成功后的页面还行，也支持超链显示，嗯……，总而言之还好吧，尽管我快受不了了</p>
-<p><img src="../../../../../photos/TIM%E6%88%AA%E5%9B%BE20190809111403.png" alt="Img"></p>
-<p><img src="../../../../../photos/TIM%E6%88%AA%E5%9B%BE20190809111440.png" alt="Img"></p>
+<p><img src="../../../../../photos/005.png" alt="Img"></p>
+<p><img src="../../../../../photos/006.png" alt="Img"></p>
 
       
 
